@@ -1,0 +1,7 @@
+<h1>{{ fuente.nombre }}</h1>
+{% for item in noticias %}
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.summary }}</p>
+    <a href="{{ item.link }}">Leer</a>
+    <hr>
+{% endfor %}

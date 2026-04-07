@@ -1,0 +1,7 @@
+<h1>Fuentes disponibles</h1>
+{% for clave, fuente in fuentes.items() %}
+    <a href="{{ url_for('mostrar_noticias', fuente_id=clave) }}">
+    {{ fuente.nombre }}
+    </a>
+    <br>
+{% endfor %}
