@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Editar Registro</h3>
+
+<form method="POST">
+    <input type="text" name="nombre" value="{{ persona.nombre }}" class="form-control mb-2" required>
+    <input type="text" name="telefono" value="{{ persona.telefono }}" class="form-control mb-2">
+    <input type="date" name="fecha_nac" value="{{ persona.fecha_nac }}" class="form-control mb-2">
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/create" class="btn btn-success mb-3">Nuevo Registro</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Fecha Nac.</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for p in personas %}
+    <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.telefono }}</td>
+        <td>{{ p.fecha_nac }}</td>
+        <td>
+            <a href="/edit/{{ p.id }}" class="btn btn-warning btn-sm">Editar</a>
+            <a href="/delete/{{ p.id }}" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

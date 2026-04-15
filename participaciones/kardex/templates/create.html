@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Nuevo Registro</h3>
+
+<form method="POST">
+    <input type="text" name="nombre" placeholder="Nombre" class="form-control mb-2" required>
+    <input type="text" name="telefono" placeholder="Teléfono" class="form-control mb-2">
+    <input type="date" name="fecha_nac" class="form-control mb-2">
+
+    <button class="btn btn-primary">Guardar</button>
+</form>
+
+{% endblock %}
