@@ -1,0 +1,54 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background-color: rgb(180, 239, 250);
+}
+
+.producto {
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 460px;
+    height: 200px;
+}
+
+#productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+#carrito {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+h3 {
+  color: green;
+  font-size: 22px;
+}
+
+.producto:hover {
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+.producto img {
+  width: 110%;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+
+button {
+  margin-left: 10px;
+  background-color: rgb(243, 243, 159);
+  border-radius: 10px;
+}
