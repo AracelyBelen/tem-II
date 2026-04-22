@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2>Nueva Cita</h2>
+
+{% if error %}
+<div class="alert alert-danger">
+  {{ error }}
+</div>
+{% endif %}
+
+<form method="POST">
+  <input type="text" name="mascota"class="form-control mb-2"placeholder="Nombre de la mascota"pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"title="Solo letras"required>
+  <input type="text" name="propietario"class="form-control mb-2"placeholder="Nombre del propietario"pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"title="Solo letras"required>
+  <input type="text" name="especie"class="form-control mb-2"placeholder="Especie (Perro, Gato...)"pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"title="Solo letras">
+  <input type="date" name="fecha"class="form-control mb-3"min="{{ fecha_hoy }}"required>
+  <button class="btn btn-success">Guardar</button>
+  <a href="/" class="btn btn-secondary">Cancelar</a>
+
+</form>
+
+{% endblock %}

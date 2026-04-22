@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="solo-index">
+
+<h2 class="mb-4 text-center">Agenda de Citas</h2>
+
+<div class="row">
+    {% for c in citas %}
+    <div class="col-md-4">
+        <div class="card mb-3 shadow">
+            <div class="card-body">
+                <h5 class="card-title">{{ c[1] }}</h5>
+                <p><strong>Propietario:</strong> {{ c[2] }}</p>
+                <p><strong>Especie:</strong> {{ c[3] }}</p>
+                <p><strong>Fecha:</strong> {{ c[4] }}</p>
+
+                <a href="/editar/{{ c[0] }}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="/eliminar/{{ c[0] }}" class="btn btn-danger btn-sm">Eliminar</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+
+{% endblock %}
