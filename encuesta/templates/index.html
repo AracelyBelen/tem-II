@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+</head>
+<body>
+    <h1>Encuesta para desarrolladores</h1>
+    <form action="{{url_for('proceso')}}" method="POST">
+        <label for="">Nombre:</label>
+        <input type="text" name="nombre"><br>
+        <p>Marca los lenguajes que usas: </p>
+        <input type="checkbox" name="lenguajes" value="python">python<br>
+        <input type="checkbox" name="lenguajes" value="java">java<br>
+        <input type="checkbox" name="lenguajes" value="kotlin">kotlin<br>
+        <input type="checkbox" name="lenguajes" value="dart">dart<br>
+    </form>
+</body>
+</html>
