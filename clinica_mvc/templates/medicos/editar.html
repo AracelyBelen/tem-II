@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Medico</title>
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <h1>Editar Medico</h1>
+    <form action="/medicos/actualizar/{{ medico.id_medico }}" method="POST">
+        <input type="text"
+            name="nombre"
+            value="{{ medico.nombre }}">
+        <br><br>
+        <input type="text"
+            name="especialidad"
+            value="{{ medico.especialidad }}">
+        <br><br>
+        <input type="text"
+            name="telefono"
+            value="{{ medico.telefono }}">
+        <br><br>
+        <input type="email"
+            name="correo"
+            value="{{ medico.correo }}">
+        <br><br>
+        <button type="submit">Actualizar</button>
+    </form>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

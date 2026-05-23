@@ -1,0 +1,1 @@
+console.log("Sistema Clinica MVC");

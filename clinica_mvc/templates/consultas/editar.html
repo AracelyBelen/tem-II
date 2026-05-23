@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Consulta</title>
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <h1>Editar Consulta</h1>
+    <form action="/consultas/actualizar/{{ consulta.id_consulta }}"
+        method="POST">
+        <input type="date"
+            name="fecha"
+            value="{{ consulta.fecha }}">
+        <br><br>
+        <textarea name="diagnostico">
+    {{ consulta.diagnostico }}
+        </textarea>
+        <br><br>
+        <textarea name="tratamiento">
+    {{ consulta.tratamiento }}
+        </textarea>
+        <br><br>
+        <select name="id_medico">
+            {% for medico in medicos %}
+            <option value="{{ medico.id_medico }}"
+            {% if medico.id_medico == consulta.id_medico %}
+                selected
+            {% endif %}
+            >
+                {{ medico.nombre }}
+            </option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <select name="id_paciente">
+            {% for paciente in pacientes %}
+            <option value="{{ paciente.id_paciente }}"
+            {% if paciente.id_paciente == consulta.id_paciente %}
+                selected
+            {% endif %}
+            >
+                {{ paciente.nombre }}
+            </option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <button type="submit">
+            Actualizar
+        </button>
+    </form>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

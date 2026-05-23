@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h1 class="mb-4 text-center">
+
+    Médicos
+
+</h1>
+
+<div class="text-center mb-4">
+
+    <a href="/medicos/agregar"
+       class="btn btn-primary">
+
+       Agregar Médico
+
+    </a>
+
+</div>
+
+<div class="row">
+
+    {% for medico in medicos %}
+
+    <div class="col-md-4 mb-4">
+
+        <div class="card shadow-lg h-100">
+
+            <div class="card-body">
+
+                <h4 class="card-title">
+
+                    {{ medico.nombre }}
+
+                </h4>
+
+                <p>
+
+                    <strong>Especialidad:</strong>
+
+                    {{ medico.especialidad }}
+
+                </p>
+
+                <p>
+
+                    <strong>Telefono:</strong>
+
+                    {{ medico.telefono }}
+
+                </p>
+
+                <p>
+
+                    <strong>Correo:</strong>
+
+                    {{ medico.correo }}
+
+                </p>
+
+            </div>
+
+            <div class="card-footer text-center">
+
+                <a href="/medicos/editar/{{ medico.id_medico }}"
+                   class="btn btn-warning">
+
+                   Editar
+
+                </a>
+
+                <a href="/medicos/eliminar/{{ medico.id_medico }}"
+                   class="btn btn-danger">
+
+                   Eliminar
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

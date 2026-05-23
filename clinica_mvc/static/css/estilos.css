@@ -1,0 +1,36 @@
+body{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/clinica.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* TITULOS */
+h1{
+
+    color: rgb(255, 255, 255);
+
+}
+
+/* BOTONES */
+button{
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 5px;
+
+}
+
+/* LINKS */
+a{
+
+    text-decoration: none;
+
+}
