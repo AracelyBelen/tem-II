@@ -1,0 +1,7 @@
+class Config:
+
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///techbol.db'
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    SECRET_KEY = '123456'

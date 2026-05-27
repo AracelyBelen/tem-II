@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div style="text-align: center;">
+    <div style="
+    display: inline-block;
+    padding: 12px 25px;
+    background: rgb(7, 165, 182);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    ">
+        Productos
+</div>
+
+<div class="text-center mb-4">
+
+    <a href="/productos/agregar"
+       class="btn btn-success">
+
+       Agregar Producto
+
+    </a>
+
+</div>
+
+<div class="row">
+
+    {% for producto in productos %}
+
+    <div class="col-md-4 mb-4">
+
+        <div class="card shadow-lg h-100">
+
+            <div class="card-body">
+
+                <h4>
+
+                    {{ producto.nombre }}
+
+                </h4>
+
+                <hr>
+
+                <p>
+
+                    <strong>Precio:</strong>
+
+                    {{ producto.precio }}
+
+                </p>
+
+                <p>
+
+                    <strong>Stock:</strong>
+
+                    {{ producto.stock }}
+
+                </p>
+
+            </div>
+
+            <div class="card-footer text-center">
+
+                <a href="/productos/editar/{{ producto.id }}"
+                   class="btn btn-warning">
+
+                   Editar
+
+                </a>
+
+                <a href="/productos/eliminar/{{ producto.id }}"
+                   class="btn btn-danger">
+
+                   Eliminar
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

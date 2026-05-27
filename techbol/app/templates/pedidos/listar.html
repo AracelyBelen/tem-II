@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div style="text-align: center;">
+
+    <div style="
+    display: inline-block;
+    padding: 12px 25px;
+    background: rgb(7, 165, 182);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    ">
+
+        Pedidos
+
+</div>
+
+<div class="text-center mb-4">
+
+    <a href="/pedidos/agregar"
+       class="btn btn-warning">
+
+       Agregar Pedido
+
+    </a>
+
+</div>
+
+<div class="row">
+
+    {% for pedido in pedidos %}
+
+    <div class="col-md-4 mb-4">
+
+        <div class="card shadow-lg h-100">
+
+            <div class="card-body">
+
+                <h4>
+
+                    Pedido #{{ pedido.id }}
+
+                </h4>
+
+                <hr>
+
+                <p>
+
+                    <strong>Fecha:</strong>
+
+                    {{ pedido.fecha }}
+
+                </p>
+
+                <p>
+
+                    <strong>Monto:</strong>
+
+                    {{ pedido.monto }}
+
+                </p>
+
+                <p>
+
+                    <strong>Producto:</strong>
+
+                    {{ pedido.producto.nombre }}
+
+                </p>
+
+                <p>
+
+                    <strong>Cliente:</strong>
+
+                    {{ pedido.cliente.nombre }}
+
+                </p>
+
+            </div>
+
+            <div class="card-footer text-center">
+
+                <a href="/pedidos/editar/{{ pedido.id }}"
+                   class="btn btn-warning">
+
+                   Editar
+
+                </a>
+
+                <a href="/pedidos/eliminar/{{ pedido.id }}"
+                   class="btn btn-danger">
+
+                   Eliminar
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

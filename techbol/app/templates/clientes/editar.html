@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+        <div class="card shadow-lg p-4">
+
+            <h2 class="text-center mb-4">
+
+                Editar Cliente
+
+            </h2>
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label>Nombre</label>
+
+                    <input type="text"
+                           name="nombre"
+                           value="{{ cliente.nombre }}"
+                           class="form-control"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Teléfono</label>
+
+                    <input type="text"
+                           name="telefono"
+                           value="{{ cliente.telefono }}"
+                           class="form-control"
+                           required>
+
+                </div>
+
+                <div class="text-center">
+
+                    <button type="submit"
+                            class="btn btn-warning">
+
+                        Actualizar
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
