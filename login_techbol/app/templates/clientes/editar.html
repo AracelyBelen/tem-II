@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="card shadow">
+
+        <div class="card-header">
+
+            <h3>Editar Cliente</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label>Nombre</label>
+
+                    <input
+                        type="text"
+                        name="nombre"
+                        value="{{ cliente.nombre }}"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Teléfono</label>
+
+                    <input
+                        type="text"
+                        name="telefono"
+                        value="{{ cliente.telefono }}"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Dirección</label>
+
+                    <input
+                        type="text"
+                        name="direccion"
+                        value="{{ cliente.direccion }}"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <button
+                    class="btn btn-primary">
+
+                    Actualizar
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

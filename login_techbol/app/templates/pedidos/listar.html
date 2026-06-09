@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="d-flex justify-content-between mb-3">
+
+        <h1 style="color: aqua;">Pedidos</h1>
+
+        <a href="{{ url_for('pedidos.agregar_pedido') }}"
+           class="btn btn-success">
+
+            Nuevo Pedido
+
+        </a>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <table class="table table-striped">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for pedido in pedidos %}
+
+                    <tr>
+
+                        <td>{{ pedido.id }}</td>
+
+                        <td>{{ pedido.cliente.nombre }}</td>
+
+                        <td>{{ pedido.producto.nombre }}</td>
+
+                        <td>{{ pedido.cantidad }}</td>
+
+                        <td>
+                            <a href="{{ url_for('pedidos.editar_pedido', id=pedido.id) }}"
+                                class="btn btn-warning btn-sm">Editar</a>
+
+                            <a href="{{ url_for('pedidos.eliminar_pedido', id=pedido.id) }}"
+                               class="btn btn-danger btn-sm">Eliminar</a>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

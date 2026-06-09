@@ -1,0 +1,25 @@
+body{
+
+    background-image: url("../img/fondo.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+}
+
+.card{
+
+    border-radius: 15px;
+
+}
+
+table{
+
+    background-color: white;
+
+}

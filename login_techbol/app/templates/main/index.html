@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="text-center mb-5">
+
+        <h1 style="color: #23f9e4;">Sistema TechBol</h1>
+
+        <h2 class="lead" style="color: rgb(250, 12, 12);">
+            Panel principal del sistema
+        </h2>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="card shadow text-center"
+                 style="background-color:#0d6efd;color:white;">
+
+                <div class="card-body">
+
+                    <h2>{{ total_clientes }}</h2>
+
+                    <h4>Clientes</h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow text-center"
+                 style="background-color:#198754;color:white;">
+
+                <div class="card-body">
+
+                    <h2>{{ total_productos }}</h2>
+
+                    <h4>Productos</h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow text-center"
+                 style="background-color:#ffc107;color:black;">
+
+                <div class="card-body">
+
+                    <h2>{{ total_pedidos }}</h2>
+
+                    <h4>Pedidos</h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

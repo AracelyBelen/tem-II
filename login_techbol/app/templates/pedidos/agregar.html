@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow">
+
+    <div class="card-header">
+
+        <h3>Nuevo Pedido</h3>
+
+    </div>
+
+    <div class="card-body">
+
+        <form method="POST">
+
+            <div class="mb-3">
+
+                <label>Cliente</label>
+
+                <select
+                    name="cliente_id"
+                    class="form-control">
+
+                    {% for cliente in clientes %}
+
+                    <option
+                        value="{{ cliente.id }}">
+
+                        {{ cliente.nombre }}
+
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label>Producto</label>
+
+                <select
+                    name="producto_id"
+                    class="form-control">
+
+                    {% for producto in productos %}
+
+                    <option
+                        value="{{ producto.id }}">
+
+                        {{ producto.nombre }}
+                        (Stock: {{ producto.stock }})
+
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label>Cantidad</label>
+
+                <input
+                    type="number"
+                    name="cantidad"
+                    min="1"
+                    class="form-control"
+                    required>
+
+            </div>
+
+            <button
+                class="btn btn-success">
+
+                Guardar Pedido
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
